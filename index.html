@@ -35,13 +35,16 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&display=swap">
+  <!-- Polices chargées sans bloquer l'affichage : si Google Fonts est lent ou bloqué,
+       la page s'affiche tout de suite avec les polices de secours. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Inter:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Inter:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Inter:wght@400;500&amp;display=swap"></noscript>
 
   <script>
     // Langue choisie avant l'affichage (évite un flash FR si le lien contient ?lang=en).
     (function () {
       var d = document.documentElement;
-      d.className += ' js';
       try {
         var l = new URLSearchParams(window.location.search).get('lang');
         if (l === 'en' || l === 'fr') d.lang = l;
@@ -658,18 +661,20 @@
 
     /* ---------- Apparition discrète au défilement ---------- */
 
-    .js .reveal {
+    /* Le masquage n'est activé que par le script d'apparition (classe reveal-on) :
+       si le JavaScript échoue, tout le contenu reste visible. */
+    .reveal-on .reveal {
       opacity: 0;
       transform: translateY(14px);
       transition: opacity .9s cubic-bezier(.2, .65, .3, 1), transform .9s cubic-bezier(.2, .65, .3, 1);
     }
-    .js .reveal.is-visible {
+    .reveal-on .reveal.is-visible {
       opacity: 1;
       transform: none;
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .reveal-on .reveal { opacity: 1; transform: none; transition: none; }
       .site-header, .brand { transition: none; }
     }
 
@@ -995,6 +1000,7 @@
         for (var j = 0; j < items.length; j++) items[j].classList.add('is-visible');
         return;
       }
+      root.classList.add('reveal-on');
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
