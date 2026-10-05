@@ -11,7 +11,7 @@ Version anglaise directe : https://nouria08.github.io/portfolio/?lang=en
 | Fichier | Rôle |
 | --- | --- |
 | `index.html` | Le site complet : HTML, CSS et JavaScript intégrés. |
-| `Nouria.jpg.jpeg` | Portrait affiché dans l’en-tête du site. |
+| `sarah.png` | Portrait détouré (fond transparent) affiché dans l’en-tête du site. |
 | `og-image.png` | Image d’aperçu de partage (WhatsApp, LinkedIn…), 1200 × 630 px. |
 | `.nojekyll` | Fichier vide qui demande à GitHub Pages de servir les fichiers tels quels, sans traitement Jekyll. |
 | `README.md` | Ce mode d’emploi. |
@@ -28,7 +28,7 @@ Le commentaire HTML qui signale cette zone contient aussi le marqueur : il est i
 
 ## Portrait
 
-La photo est le fichier `Nouria.jpg.jpeg` à la racine du dépôt (nom exact, double extension). Elle est recadrée sur le visage et les épaules en CSS, sans modifier le fichier : le cadrage se règle dans le bloc « Portrait » de la balise `<style>` (valeurs `top`, `left` et `width` de `.hero-portrait img`). Pour changer de photo, remplacer le fichier en gardant le même nom, ou modifier l’attribut `src` dans `index.html`.
+La photo est le fichier `sarah.png` à la racine du dépôt : une version détourée sur fond transparent, déjà cadrée sur le visage et les épaules. Elle est posée directement sur le fond de la page, sans cadre ni ombre ; ses bords bas et latéraux sont légèrement fondus pour éviter une coupe nette. Ces réglages se trouvent dans le bloc « Portrait » de la balise `<style>`. Pour changer de photo, remplacer le fichier en gardant le même nom, ou modifier l’attribut `src` dans `index.html`.
 
 ## Modifier les textes
 

@@ -265,32 +265,25 @@
     /* Mobile : portrait compact au-dessus du nom */
     .hero-portrait {
       order: -1;
-      position: relative;
       width: min(46%, 190px);
-      aspect-ratio: 4 / 5;
-      margin-bottom: 1.75rem;
-      overflow: hidden;
-      border-radius: 6px;
-      background: #E9E5DC;
-    }
-    /* Filet très fin : détache le fond clair de la photo du fond de page */
-    .hero-portrait::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(17, 17, 17, .08);
-      border-radius: inherit;
-      pointer-events: none;
+      margin-bottom: 1.25rem;
     }
 
-    /* Cadrage serré visage + épaules dans la photo d'origine (768 × 1024 px) */
+    /* Photo détourée (sarah.png, fond transparent, déjà cadrée visage + épaules) posée
+       directement sur le fond de page : pas de cadre, pas de fond, pas d'ombre.
+       Le buste étant coupé net en bas et sur les côtés, ces bords sont fondus dans le fond. */
     .hero-portrait img {
-      position: absolute;
-      top: -8.89%;
-      left: -9.72%;
-      width: 133.33%;
-      max-width: none;
+      display: block;
+      width: 100%;
       height: auto;
+      -webkit-mask-image:
+        linear-gradient(to bottom, #000 78%, transparent 100%),
+        linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to bottom, #000 78%, transparent 100%),
+        linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+      mask-composite: intersect;
     }
 
     /* Ordinateur : texte à gauche, portrait à droite */
@@ -727,7 +720,7 @@
           </div>
           <!-- PORTRAIT : le cadrage se règle dans le bloc CSS « Portrait » (.hero-portrait img). -->
           <figure class="hero-portrait">
-            <img src="Nouria.jpg.jpeg" alt="Sarah Nouria" width="768" height="1024" decoding="async" fetchpriority="high">
+            <img src="sarah.png" alt="Sarah Nouria" width="1080" height="1350" decoding="async" fetchpriority="high">
           </figure>
         </div>
       </div>
