@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#F7F5F0">
+
+  <title>Sarah Nouria · Consultante en stratégie d’acquisition et performance média</title>
+  <meta name="description" content="Je transforme les budgets média en croissance mesurable. Data, preuve, décision.">
+  <meta name="author" content="Sarah Nouria">
+  <link rel="canonical" href="https://nouria08.github.io/portfolio/">
+
+  <!-- Aperçu de partage (WhatsApp, LinkedIn, iMessage, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sarah Nouria">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:url" content="https://nouria08.github.io/portfolio/">
+  <meta property="og:title" content="Sarah Nouria · Consultante en stratégie d’acquisition et performance média">
+  <meta property="og:description" content="Je transforme les budgets média en croissance mesurable. Data, preuve, décision.">
+  <meta property="og:image" content="https://nouria08.github.io/portfolio/og-image.png">
+  <meta property="og:image:secure_url" content="https://nouria08.github.io/portfolio/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sarah Nouria. Data, preuve, décision.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sarah Nouria · Consultante en stratégie d’acquisition et performance média">
+  <meta name="twitter:description" content="Je transforme les budgets média en croissance mesurable. Data, preuve, décision.">
+  <meta name="twitter:image" content="https://nouria08.github.io/portfolio/og-image.png">
+  <meta name="twitter:image:alt" content="Sarah Nouria. Data, preuve, décision.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B1F3A'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23F7F5F0'%3ES%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&display=swap">
+
+  <script>
+    // Langue choisie avant l'affichage (évite un flash FR si le lien contient ?lang=en).
+    (function () {
+      var d = document.documentElement;
+      d.className += ' js';
+      try {
+        var l = new URLSearchParams(window.location.search).get('lang');
+        if (l === 'en' || l === 'fr') d.lang = l;
+      } catch (e) {}
+    })();
+  </script>
+
+  <style>
+    :root {
+      --bg: #F7F5F0;          /* blanc cassé */
+      --ink: #111111;         /* texte */
+      --ink-soft: #4F4C47;    /* texte secondaire */
+      --ink-faint: #6B675F;   /* libellés */
+      --line: #DEDAD1;        /* filets gris */
+      --navy: #0B1F3A;        /* accent unique : bleu nuit */
+      --navy-deep: #06142A;
+
+      --serif: 'Cormorant Garamond', Garamond, Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+      --wrap: 1120px;
+      --gutter: clamp(1.25rem, 5vw, 3rem);
+      --header-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      font-variant-numeric: lining-nums;
+      overflow-wrap: break-word;
+    }
+
+    h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; }
+    ol, ul { padding: 0; list-style: none; }
+
+    a { color: inherit; }
+
+    ::selection { background: var(--navy); color: var(--bg); }
+
+    :focus-visible {
+      outline: 2px solid var(--navy);
+      outline-offset: 3px;
+    }
+
+    /* Bilingue : on n'affiche que la langue active */
+    html[lang="fr"] [lang="en"],
+    html[lang="en"] [lang="fr"] { display: none !important; }
+
+    .wrap {
+      width: 100%;
+      max-width: calc(var(--wrap) + 2 * var(--gutter));
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .skip {
+      position: absolute;
+      left: var(--gutter);
+      top: -100px;
+      z-index: 20;
+      padding: .75rem 1rem;
+      background: var(--navy);
+      color: var(--bg);
+      font-size: .875rem;
+      text-decoration: none;
+    }
+    .skip:focus { top: .75rem; }
+
+    /* ---------- En-tête ---------- */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid transparent;
+      transition: border-color .4s ease;
+    }
+    .site-header.is-scrolled { border-bottom-color: var(--line); }
+
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-h);
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.3125rem;
+      font-weight: 500;
+      line-height: 1;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s ease, visibility .4s ease;
+    }
+    .is-scrolled .brand { opacity: 1; visibility: visible; }
+
+    .lang {
+      display: flex;
+      align-items: center;
+      margin-right: -.625rem;
+    }
+    .lang button {
+      appearance: none;
+      -webkit-appearance: none;
+      background: none;
+      border: 0;
+      border-radius: 0;
+      margin: 0;
+      padding: 0 .625rem;
+      min-width: 44px;
+      min-height: 44px;
+      position: relative;
+      font-family: var(--sans);
+      font-size: .8125rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      color: var(--ink-faint);
+      cursor: pointer;
+      transition: color .2s ease;
+    }
+    .lang button:hover { color: var(--ink); }
+    .lang button[aria-pressed="true"] { color: var(--ink); }
+    .lang button[aria-pressed="true"]::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 9px;
+      width: 16px;
+      height: 1px;
+      margin-left: -8px;
+      background: var(--navy);
+    }
+    .lang .sep {
+      width: 1px;
+      height: 12px;
+      background: var(--line);
+    }
+
+    /* ---------- Héros ---------- */
+
+    .hero {
+      padding-block: clamp(2.5rem, 8vw, 4rem) clamp(4rem, 12vw, 5.5rem);
+    }
+
+    @media (min-width: 820px) {
+      .hero {
+        display: flex;
+        align-items: center;
+        min-height: calc(100vh - var(--header-h));
+        min-height: calc(100svh - var(--header-h));
+        padding-block: 5rem 6rem;
+      }
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(3.25rem, 15vw, 8rem);
+      line-height: .95;
+      letter-spacing: -.015em;
+    }
+
+    .hero-role {
+      margin-top: 1.25rem;
+      max-width: 60ch;
+      font-size: clamp(1rem, 2.2vw, 1.125rem);
+      color: var(--ink-soft);
+    }
+
+    .hero-rule {
+      width: 56px;
+      height: 2px;
+      margin: clamp(2rem, 5vh, 3rem) 0;
+      background: var(--navy);
+      border: 0;
+    }
+
+    .hero-statement {
+      max-width: 21ch;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.875rem, 5.6vw, 3.25rem);
+      line-height: 1.12;
+      letter-spacing: -.005em;
+    }
+
+    .hero-signature {
+      margin-top: 1.25rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.375rem, 3vw, 1.75rem);
+      line-height: 1.3;
+      color: var(--navy);
+    }
+
+    .hero-meta {
+      margin-top: clamp(2.5rem, 7vh, 4.5rem);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .hero-meta .nowrap { white-space: nowrap; }
+
+    /* PORTRAIT : à décommenter le jour où un portrait est ajouté (voir le commentaire dans le héros).
+    .hero-inner { display: grid; gap: 3rem; }
+    .hero-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+    @media (min-width: 900px) {
+      .hero-inner { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); align-items: end; gap: 4rem; }
+    }
+    */
+
+    /* ---------- Sections ---------- */
+
+    .section {
+      padding-block: clamp(4.5rem, 11vw, 8.5rem);
+      border-top: 1px solid var(--line);
+      scroll-margin-top: var(--header-h);
+    }
+
+    .section-title {
+      margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -.01em;
+    }
+
+    .label {
+      font-size: .75rem;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    /* ---------- Chiffres clés ---------- */
+
+    .figures { border-bottom: 1px solid var(--line); }
+
+    .figure {
+      display: grid;
+      gap: 1.25rem;
+      padding-block: clamp(2rem, 5vw, 3rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .figure-value {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(3.25rem, 12vw, 5.5rem);
+      line-height: 1;
+      letter-spacing: -.01em;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .figure-pre {
+      display: block;
+      margin-bottom: .5rem;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.25rem, 3vw, 1.5rem);
+      letter-spacing: 0;
+      color: var(--ink-soft);
+    }
+
+    .figure-text {
+      margin-top: .625rem;
+      max-width: 46ch;
+      font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+      line-height: 1.6;
+    }
+
+    @media (min-width: 820px) {
+      .figure {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        align-items: end;
+        gap: 3rem;
+      }
+    }
+
+    /* ---------- Marques ---------- */
+
+    .brands { border-bottom: 1px solid var(--line); }
+
+    .brand-row {
+      display: grid;
+      gap: .375rem;
+      padding-block: clamp(1rem, 2.5vw, 1.375rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.875rem, 5vw, 2.75rem);
+      line-height: 1.15;
+    }
+
+    .brand-note {
+      max-width: 40ch;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    @media (min-width: 820px) {
+      .brand-row {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        align-items: baseline;
+        gap: 3rem;
+      }
+    }
+
+    /* ---------- Méthode ---------- */
+
+    .conviction { max-width: 40rem; }
+
+    .conviction-lead {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.625rem, 3.8vw, 2.375rem);
+      line-height: 1.2;
+    }
+
+    .conviction-body {
+      margin-top: 1.25rem;
+      max-width: 50ch;
+      color: var(--ink-soft);
+    }
+
+    .steps {
+      display: grid;
+      gap: 2.25rem;
+      margin-top: clamp(3rem, 7vw, 5rem);
+      padding: .25rem 0 .25rem 1.5rem;
+      border-left: 2px solid var(--navy);
+    }
+
+    .step-num {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      color: var(--navy);
+    }
+
+    .step-title {
+      margin-top: .5rem;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.75rem, 3.2vw, 2.125rem);
+      line-height: 1.15;
+    }
+
+    .step-quote {
+      margin-top: .75rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.3125rem;
+      line-height: 1.35;
+    }
+
+    .step-text {
+      margin-top: .75rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+
+    .measure {
+      display: grid;
+      gap: .625rem;
+      margin-top: 1.75rem;
+    }
+
+    .measure .label { color: var(--navy); }
+
+    .measure-text {
+      max-width: 36ch;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.375rem, 2.8vw, 1.75rem);
+      line-height: 1.3;
+    }
+
+    @media (min-width: 900px) {
+      .steps {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2.5rem;
+        padding: 0 0 2.5rem;
+        border-left: 0;
+        border-bottom: 2px solid var(--navy);
+      }
+      .measure {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+        gap: 2.5rem;
+        align-items: baseline;
+      }
+    }
+
+    /* ---------- Études de cas ---------- */
+
+    .cases {
+      display: grid;
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+
+    .case {
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--ink);
+    }
+
+    .case-title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.875rem, 4vw, 2.375rem);
+      line-height: 1.15;
+    }
+    .case-title span { color: var(--ink-faint); }
+
+    .case-body { margin-top: 1.75rem; }
+
+    .case-part {
+      padding-block: 1.125rem;
+      border-top: 1px solid var(--line);
+    }
+    .case-part:first-child { border-top: 0; padding-top: 0; }
+
+    .case-part dd {
+      margin-top: .375rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--ink-faint);
+    }
+
+    .todo {
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--navy);
+    }
+
+    @media (min-width: 820px) {
+      .cases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    /* ---------- Contact ---------- */
+
+    .contact-title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.75rem, 8vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -.015em;
+    }
+
+    .contact-text {
+      margin-top: 1.5rem;
+      max-width: 42ch;
+      color: var(--ink-soft);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem 2rem;
+      margin-top: clamp(2.25rem, 5vw, 3rem);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 1.75rem;
+      background: var(--navy);
+      color: var(--bg);
+      font-size: .9375rem;
+      font-weight: 500;
+      letter-spacing: .02em;
+      text-decoration: none;
+      transition: background-color .25s ease;
+    }
+    .button:hover { background: var(--navy-deep); }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: .9375rem;
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: .35em;
+      text-decoration-color: var(--navy);
+      transition: color .25s ease;
+    }
+    .text-link:hover { color: var(--navy); }
+
+    .contact-mail {
+      margin-top: 1.25rem;
+      font-size: .875rem;
+      color: var(--ink-faint);
+    }
+
+    /* ---------- Pied de page ---------- */
+
+    .site-footer { border-top: 1px solid var(--line); }
+
+    .site-footer .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: .5rem 2rem;
+      padding-block: 2rem calc(2rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+
+    .footer-meta {
+      font-size: .8125rem;
+      color: var(--ink-faint);
+    }
+
+    /* ---------- Apparition discrète au défilement ---------- */
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .9s cubic-bezier(.2, .65, .3, 1), transform .9s cubic-bezier(.2, .65, .3, 1);
+    }
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .site-header, .brand { transition: none; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">Sarah Nouria</a>
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+        <span class="sep" aria-hidden="true"></span>
+        <button type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- 1. En-tête -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <h1 class="hero-name">Sarah Nouria</h1>
+            <p class="hero-role">
+              <span lang="fr">Consultante en stratégie d’acquisition et performance média</span>
+              <span lang="en">Acquisition strategy &amp; media performance consultant</span>
+            </p>
+            <hr class="hero-rule">
+            <p class="hero-statement">
+              <span lang="fr">Je transforme les budgets média en croissance mesurable.</span>
+              <span lang="en">I turn media budgets into measurable growth.</span>
+            </p>
+            <p class="hero-signature">
+              <span lang="fr">Data, preuve, décision.</span>
+              <span lang="en">Data, proof, decision.</span>
+            </p>
+            <p class="hero-meta">
+              <span lang="fr"><span class="nowrap">Casablanca &amp; Abidjan ·</span> <span class="nowrap">4 ans d’expérience</span></span>
+              <span lang="en"><span class="nowrap">Casablanca &amp; Abidjan ·</span> <span class="nowrap">4 years of experience</span></span>
+            </p>
+          </div>
+          <!--
+            PORTRAIT : emplacement prévu pour une photo, à ajouter plus tard.
+            1. Déposer la photo à la racine du dépôt (ex. portrait.jpg, format portrait 4:5, ~1200 px de haut).
+            2. Coller ici, juste après </div> de .hero-text :
+               <figure class="hero-portrait"><img src="portrait.jpg" alt="Sarah Nouria" width="960" height="1200"></figure>
+            3. Décommenter le bloc CSS « PORTRAIT » dans la balise <style>.
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Chiffres clés -->
+    <section class="section" id="chiffres" aria-labelledby="chiffres-titre">
+      <div class="wrap">
+        <h2 class="section-title reveal" id="chiffres-titre">
+          <span lang="fr">Chiffres clés</span>
+          <span lang="en">Key figures</span>
+        </h2>
+
+        <div class="figures">
+          <article class="figure reveal">
+            <p class="figure-value">
+              <span lang="fr"><span class="figure-pre">plus de</span>1&nbsp;M€</span>
+              <span lang="en"><span class="figure-pre">over</span>€1M</span>
+            </p>
+            <div>
+              <p class="label">Orange Maroc</p>
+              <p class="figure-text" lang="fr">Pilotage d’un budget média annuel supérieur à un million d’euros pour Orange Maroc, sur plus de huit plateformes.</p>
+              <p class="figure-text" lang="en">Steered an annual media budget of over one million euros for Orange Maroc, across more than eight platforms.</p>
+            </div>
+          </article>
+
+          <article class="figure reveal">
+            <p class="figure-value">
+              <span lang="fr">800&nbsp;000&nbsp;€</span>
+              <span lang="en">€800,000</span>
+            </p>
+            <div>
+              <p class="label">
+                <span lang="fr">EDF · grands groupes bancaires</span>
+                <span lang="en">EDF · major banking groups</span>
+              </p>
+              <p class="figure-text" lang="fr">Gestion d’un budget annuel de 800&nbsp;000&nbsp;€ pour EDF et de grands groupes bancaires, +40&nbsp;% de leads à l’échelle de l’agence.</p>
+              <p class="figure-text" lang="en">Managed an annual budget of €800,000 for EDF and major banking groups, with +40% in leads agency-wide.</p>
+            </div>
+          </article>
+
+          <article class="figure reveal">
+            <p class="figure-value">
+              <span lang="fr">+60&nbsp;%</span>
+              <span lang="en">+60%</span>
+            </p>
+            <div>
+              <p class="label">Honda Maroc</p>
+              <p class="figure-text" lang="fr">+60&nbsp;% de génération de leads et +35&nbsp;% de nouveaux clients pour Honda Maroc, concessionnaire premium, données CRM.</p>
+              <p class="figure-text" lang="en">+60% in lead generation and +35% in new customers for Honda Maroc, a premium dealership, based on CRM data.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Marques accompagnées -->
+    <section class="section" id="marques" aria-labelledby="marques-titre">
+      <div class="wrap">
+        <h2 class="section-title reveal" id="marques-titre">
+          <span lang="fr">Marques accompagnées</span>
+          <span lang="en">Brands I’ve worked with</span>
+        </h2>
+
+        <ul class="brands reveal">
+          <li class="brand-row"><span class="brand-name">Orange</span></li>
+          <li class="brand-row"><span class="brand-name">Honda</span></li>
+          <li class="brand-row">
+            <span class="brand-name">Ferrari</span>
+            <p class="brand-note" lang="fr">Opérations de notoriété premium&nbsp;: événementiel et soirées privées clients.</p>
+            <p class="brand-note" lang="en">Premium brand awareness: events and private client evenings.</p>
+          </li>
+          <li class="brand-row"><span class="brand-name">EDF</span></li>
+          <li class="brand-row"><span class="brand-name">L’Oréal</span></li>
+          <li class="brand-row"><span class="brand-name">La Roche-Posay</span></li>
+          <li class="brand-row"><span class="brand-name">CeraVe</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. Méthode -->
+    <section class="section" id="methode" aria-labelledby="methode-titre">
+      <div class="wrap">
+        <h2 class="section-title reveal" id="methode-titre">
+          <span lang="fr">Méthode</span>
+          <span lang="en">Method</span>
+        </h2>
+
+        <div class="conviction reveal">
+          <p class="conviction-lead" lang="fr">Le marketing n’est pas une affaire de couleurs. C’est une affaire de données.</p>
+          <p class="conviction-lead" lang="en">Marketing isn’t about colours. It’s about data.</p>
+          <p class="conviction-body" lang="fr">On ne pilote pas à l’instinct. Chaque décision s’appuie sur ce que la data prouve. C’est ainsi qu’un business grandit&nbsp;: sur du concret.</p>
+          <p class="conviction-body" lang="en">You don’t steer by instinct. Every decision rests on what the data proves. That’s how a business grows: on solid ground.</p>
+        </div>
+
+        <ol class="steps reveal">
+          <li class="step">
+            <p class="step-num">01</p>
+            <h3 class="step-title">
+              <span lang="fr">Diagnostic</span>
+              <span lang="en">Diagnosis</span>
+            </h3>
+            <p class="step-quote" lang="fr">Je commence toujours par là où l’argent fuit.</p>
+            <p class="step-quote" lang="en">I always start with where the money is leaking.</p>
+            <p class="step-text" lang="fr">Audit de ce qui est dépensé, de ce qui est réellement mesuré et de ce qui rapporte, avant tout nouvel investissement.</p>
+            <p class="step-text" lang="en">An audit of what is spent, what is actually measured and what pays off, before any new investment.</p>
+          </li>
+          <li class="step">
+            <p class="step-num">02</p>
+            <h3 class="step-title">
+              <span lang="fr">Notoriété</span>
+              <span lang="en">Awareness</span>
+            </h3>
+            <p class="step-text" lang="fr">Être vu ne suffit pas. Il faut être vu par les bonnes personnes, au bon coût.</p>
+            <p class="step-text" lang="en">Being seen is not enough. You need to be seen by the right people, at the right cost.</p>
+          </li>
+          <li class="step">
+            <p class="step-num">03</p>
+            <h3 class="step-title">Acquisition</h3>
+            <p class="step-text" lang="fr">Le volume ne prouve rien. Le budget va aux canaux qui amènent des prospects qualifiés.</p>
+            <p class="step-text" lang="en">Volume proves nothing. Budget goes to the channels that bring in qualified prospects.</p>
+          </li>
+          <li class="step">
+            <p class="step-num">04</p>
+            <h3 class="step-title">Conversion</h3>
+            <p class="step-text" lang="fr">Un lead ne vaut que s’il devient client. Je suis le parcours jusqu’à la vente, pas jusqu’au clic.</p>
+            <p class="step-text" lang="en">A lead only counts if it becomes a customer. I follow the journey to the sale, not to the click.</p>
+          </li>
+        </ol>
+
+        <div class="measure reveal">
+          <p class="label">
+            <span lang="fr">Mesure</span>
+            <span lang="en">Measurement</span>
+          </p>
+          <p class="measure-text" lang="fr">La mesure n’est pas une étape finale. Elle accompagne chaque étape, et chaque décision repose sur elle.</p>
+          <p class="measure-text" lang="en">Measurement is not a final step. It runs through every stage, and every decision rests on it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Études de cas (textes provisoires : remplacer chaque [À COMPLÉTER] en FR et en EN) -->
+    <section class="section" id="cas" aria-labelledby="cas-titre">
+      <div class="wrap">
+        <h2 class="section-title reveal" id="cas-titre">
+          <span lang="fr">Études de cas</span>
+          <span lang="en">Case studies</span>
+        </h2>
+
+        <div class="cases">
+          <article class="case reveal">
+            <h3 class="case-title">
+              <span lang="fr">Cas 1&nbsp;:</span><span lang="en">Case 1:</span> Honda Maroc
+            </h3>
+            <dl class="case-body">
+              <div class="case-part">
+                <dt class="label"><span lang="fr">Contexte</span><span lang="en">Context</span></dt>
+                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Situation de départ, objectif, contraintes.</dd>
+                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> Starting point, objective, constraints.</dd>
+              </div>
+              <div class="case-part">
+                <dt class="label">Action</dt>
+                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Ce qui a été audité, décidé et mis en place.</dd>
+                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> What was audited, decided and put in place.</dd>
+              </div>
+              <div class="case-part">
+                <dt class="label"><span lang="fr">Résultat</span><span lang="en">Result</span></dt>
+                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Résultats chiffrés et source des données.</dd>
+                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> Measured results and data source.</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="case reveal">
+            <h3 class="case-title">
+              <span lang="fr">Cas 2&nbsp;:</span><span lang="en">Case 2:</span> Orange Maroc
+            </h3>
+            <dl class="case-body">
+              <div class="case-part">
+                <dt class="label"><span lang="fr">Contexte</span><span lang="en">Context</span></dt>
+                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Situation de départ, objectif, contraintes.</dd>
+                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> Starting point, objective, constraints.</dd>
+              </div>
+              <div class="case-part">
+                <dt class="label">Action</dt>
+                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Ce qui a été audité, décidé et mis en place.</dd>
+                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> What was audited, decided and put in place.</dd>
+              </div>
+              <div class="case-part">
+                <dt class="label"><span lang="fr">Résultat</span><span lang="en">Result</span></dt>
+                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Résultats chiffrés et source des données.</dd>
+                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> Measured results and data source.</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact (remplacer [EMAIL] et [LINKEDIN]) -->
+    <section class="section" id="contact" aria-labelledby="contact-titre">
+      <div class="wrap reveal">
+        <h2 class="contact-title" id="contact-titre">
+          <span lang="fr">Parlons de vos chiffres.</span>
+          <span lang="en">Let’s talk numbers.</span>
+        </h2>
+        <p class="contact-text" lang="fr">Dites-moi où vous en êtes et ce que vous visez. On commence par vos chiffres.</p>
+        <p class="contact-text" lang="en">Tell me where you stand and what you are aiming for. We start with your numbers.</p>
+
+        <div class="contact-actions">
+          <a class="button" href="mailto:[EMAIL]">
+            <span lang="fr">Écrire un e-mail</span>
+            <span lang="en">Send an email</span>
+          </a>
+          <a class="text-link" href="[LINKEDIN]" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <p class="contact-mail">[EMAIL]</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-name">Sarah Nouria</p>
+      <p class="footer-meta">Casablanca &amp; Abidjan</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+
+      // ---------- Langue ----------
+      var meta = {
+        fr: {
+          title: 'Sarah Nouria · Consultante en stratégie d’acquisition et performance média',
+          description: 'Je transforme les budgets média en croissance mesurable. Data, preuve, décision.'
+        },
+        en: {
+          title: 'Sarah Nouria · Acquisition strategy & media performance consultant',
+          description: 'I turn media budgets into measurable growth. Data, proof, decision.'
+        }
+      };
+      var buttons = document.querySelectorAll('[data-set-lang]');
+      var description = document.querySelector('meta[name="description"]');
+
+      function applyLang(lang) {
+        root.lang = lang;
+        document.title = meta[lang].title;
+        if (description) description.setAttribute('content', meta[lang].description);
+        for (var i = 0; i < buttons.length; i++) {
+          var active = buttons[i].getAttribute('data-set-lang') === lang;
+          buttons[i].setAttribute('aria-pressed', active ? 'true' : 'false');
+        }
+      }
+
+      // Garde la langue dans l'adresse (?lang=en) pour pouvoir partager la version anglaise.
+      function rememberLang(lang) {
+        try {
+          var url = new URL(window.location.href);
+          if (lang === 'en') url.searchParams.set('lang', 'en');
+          else url.searchParams.delete('lang');
+          window.history.replaceState(null, '', url.toString());
+        } catch (e) {}
+      }
+
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var lang = this.getAttribute('data-set-lang');
+          applyLang(lang);
+          rememberLang(lang);
+        });
+      }
+      applyLang(root.lang === 'en' ? 'en' : 'fr');
+
+      var hasIO = 'IntersectionObserver' in window;
+
+      // ---------- En-tête : le nom apparaît une fois le héros dépassé ----------
+      var header = document.querySelector('.site-header');
+      var heroName = document.querySelector('.hero-name');
+      if (hasIO && header && heroName) {
+        new IntersectionObserver(function (entries) {
+          header.classList.toggle('is-scrolled', !entries[0].isIntersecting);
+        }, { rootMargin: '-64px 0px 0px 0px' }).observe(heroName);
+      } else if (header) {
+        header.classList.add('is-scrolled');
+      }
+
+      // ---------- Apparition discrète au défilement ----------
+      var items = document.querySelectorAll('.reveal');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!hasIO || reduce) {
+        for (var j = 0; j < items.length; j++) items[j].classList.add('is-visible');
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      for (var k = 0; k < items.length; k++) observer.observe(items[k]);
+    })();
+  </script>
+</body>
+</html>
