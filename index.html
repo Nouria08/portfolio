@@ -255,13 +255,60 @@
     }
     .hero-meta .nowrap { white-space: nowrap; }
 
-    /* PORTRAIT : à décommenter le jour où un portrait est ajouté (voir le commentaire dans le héros).
-    .hero-inner { display: grid; gap: 3rem; }
-    .hero-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
-    @media (min-width: 900px) {
-      .hero-inner { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); align-items: end; gap: 4rem; }
+    /* ---------- Portrait ---------- */
+
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
     }
-    */
+
+    /* Mobile : portrait compact au-dessus du nom */
+    .hero-portrait {
+      order: -1;
+      position: relative;
+      width: min(46%, 190px);
+      aspect-ratio: 4 / 5;
+      margin-bottom: 1.75rem;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #E9E5DC;
+    }
+    /* Filet très fin : détache le fond clair de la photo du fond de page */
+    .hero-portrait::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(17, 17, 17, .08);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    /* Cadrage serré visage + épaules dans la photo d'origine (768 × 1024 px) */
+    .hero-portrait img {
+      position: absolute;
+      top: -8.89%;
+      left: -9.72%;
+      width: 133.33%;
+      max-width: none;
+      height: auto;
+    }
+
+    /* Ordinateur : texte à gauche, portrait à droite */
+    @media (min-width: 900px) {
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+        align-items: center;
+        gap: 4rem;
+      }
+      .hero-portrait {
+        order: 0;
+        width: 100%;
+        max-width: 380px;
+        margin: 0 0 0 auto;
+      }
+      .hero-name { font-size: clamp(3.25rem, 9.5vw, 8rem); }
+    }
 
     /* ---------- Sections ---------- */
 
@@ -292,7 +339,9 @@
     /* ---------- Chiffres ---------- */
 
     /* Les chiffres suivent directement le héros : un peu moins d'air au-dessus */
-    #chiffres { padding-top: clamp(2.5rem, 6vw, 4rem); }
+    #chiffres { padding-block: clamp(2.5rem, 6vw, 4rem) clamp(2.25rem, 5vw, 3.25rem); }
+    /* Moins de vide entre les chiffres et les marques */
+    #marques { padding-top: clamp(2.25rem, 5vw, 3.5rem); }
 
     /* Résultats en vedette */
     .results { display: grid; }
@@ -587,6 +636,8 @@
       font-size: .875rem;
       color: var(--ink-faint);
     }
+    .contact-mail a { text-decoration: none; transition: color .25s ease; }
+    .contact-mail a:hover { color: var(--navy); }
 
     /* ---------- Pied de page ---------- */
 
@@ -674,13 +725,10 @@
               <span lang="en"><span class="nowrap">Casablanca &amp; Abidjan ·</span> <span class="nowrap">4 years of experience</span></span>
             </p>
           </div>
-          <!--
-            PORTRAIT : emplacement prévu pour une photo, à ajouter plus tard.
-            1. Déposer la photo à la racine du dépôt (ex. portrait.jpg, format portrait 4:5, ~1200 px de haut).
-            2. Coller ici, juste après </div> de .hero-text :
-               <figure class="hero-portrait"><img src="portrait.jpg" alt="Sarah Nouria" width="960" height="1200"></figure>
-            3. Décommenter le bloc CSS « PORTRAIT » dans la balise <style>.
-          -->
+          <!-- PORTRAIT : le cadrage se règle dans le bloc CSS « Portrait » (.hero-portrait img). -->
+          <figure class="hero-portrait">
+            <img src="Nouria.jpg.jpeg" alt="Sarah Nouria" width="768" height="1024" decoding="async" fetchpriority="high">
+          </figure>
         </div>
       </div>
     </section>
@@ -857,7 +905,7 @@
       </div>
     </section>
 
-    <!-- 6. Contact (remplacer [EMAIL] et [LINKEDIN]) -->
+    <!-- 6. Contact -->
     <section class="section" id="contact" aria-labelledby="contact-titre">
       <div class="wrap reveal">
         <h2 class="contact-title" id="contact-titre">
@@ -868,13 +916,13 @@
         <p class="contact-text" lang="en">Tell me where you stand and what you are aiming for. We start with your numbers.</p>
 
         <div class="contact-actions">
-          <a class="button" href="mailto:[EMAIL]">
+          <a class="button" href="mailto:sarahnouria09@gmail.com">
             <span lang="fr">Écrire un e-mail</span>
             <span lang="en">Send an email</span>
           </a>
-          <a class="text-link" href="[LINKEDIN]" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="text-link" href="https://www.linkedin.com/in/sarah-nouria" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-        <p class="contact-mail">[EMAIL]</p>
+        <p class="contact-mail"><a href="mailto:sarahnouria09@gmail.com">sarahnouria09@gmail.com</a></p>
       </div>
     </section>
 

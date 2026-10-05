@@ -11,23 +11,24 @@ Version anglaise directe : https://nouria08.github.io/portfolio/?lang=en
 | Fichier | Rôle |
 | --- | --- |
 | `index.html` | Le site complet : HTML, CSS et JavaScript intégrés. |
+| `Nouria.jpg.jpeg` | Portrait affiché dans l’en-tête du site. |
 | `og-image.png` | Image d’aperçu de partage (WhatsApp, LinkedIn…), 1200 × 630 px. |
 | `.nojekyll` | Fichier vide qui demande à GitHub Pages de servir les fichiers tels quels, sans traitement Jekyll. |
 | `README.md` | Ce mode d’emploi. |
 
 ## Placeholders à remplacer avant diffusion
 
-Tous se trouvent dans `index.html` (recherche avec Ctrl+F / Cmd+F) :
+Dans `index.html` (recherche avec Ctrl+F / Cmd+F) :
 
 | Placeholder | Où | Par quoi le remplacer |
 | --- | --- | --- |
-| `[EMAIL]` | Section Contact, 2 fois : dans `href="mailto:[EMAIL]"` et dans l’adresse affichée sous le bouton | L’adresse e-mail, par exemple `mailto:prenom@domaine.com` |
-| `[LINKEDIN]` | Section Contact, `href="[LINKEDIN]"` | L’URL complète du profil, par exemple `https://www.linkedin.com/in/…` |
 | `[À COMPLÉTER]` | Études de cas, 12 fois : Contexte, Action et Résultat pour Honda Maroc et Orange Maroc, en FR et en EN | Le texte définitif. Supprimer aussi la courte indication qui suit chaque marqueur. |
 
-Les commentaires HTML qui signalent ces zones contiennent aussi ces marqueurs : ils sont invisibles sur le site et peuvent rester.
+Le commentaire HTML qui signale cette zone contient aussi le marqueur : il est invisible sur le site et peut rester.
 
-Portrait : un commentaire HTML dans l’en-tête du site (recherche « PORTRAIT ») explique où insérer la photo, avec un bloc CSS prêt à décommenter. Sans photo, la mise en page est complète.
+## Portrait
+
+La photo est le fichier `Nouria.jpg.jpeg` à la racine du dépôt (nom exact, double extension). Elle est recadrée sur le visage et les épaules en CSS, sans modifier le fichier : le cadrage se règle dans le bloc « Portrait » de la balise `<style>` (valeurs `top`, `left` et `width` de `.hero-portrait img`). Pour changer de photo, remplacer le fichier en gardant le même nom, ou modifier l’attribut `src` dans `index.html`.
 
 ## Modifier les textes
 
