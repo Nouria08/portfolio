@@ -265,28 +265,38 @@
       flex-direction: column;
     }
 
-    /* Mobile : portrait compact au-dessus du nom */
+    /* Mobile : portrait compact au-dessus du nom.
+       Le cadre 4:5 est transparent (pas de fond, pas de bordure, pas d'ombre) ;
+       ses bords bas et latéraux sont fondus dans le fond de page. */
     .hero-portrait {
       order: -1;
+      position: relative;
       width: min(46%, 190px);
+      aspect-ratio: 4 / 5;
       margin-bottom: 1.25rem;
-    }
-
-    /* Photo détourée (sarah.png, fond transparent, déjà cadrée visage + épaules) posée
-       directement sur le fond de page : pas de cadre, pas de fond, pas d'ombre.
-       Le buste étant coupé net en bas et sur les côtés, ces bords sont fondus dans le fond. */
-    .hero-portrait img {
-      display: block;
-      width: 100%;
-      height: auto;
+      overflow: hidden;
       -webkit-mask-image:
-        linear-gradient(to bottom, #000 78%, transparent 100%),
-        linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+        linear-gradient(to bottom, #000 76%, transparent 100%),
+        linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
       -webkit-mask-composite: source-in;
       mask-image:
-        linear-gradient(to bottom, #000 78%, transparent 100%),
-        linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+        linear-gradient(to bottom, #000 76%, transparent 100%),
+        linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
       mask-composite: intersect;
+    }
+
+    /* Cadrage serré visage + épaules dans sarah.png (1080 × 1350 px, fond transparent).
+       Zone affichée : x 221 → 859, y 300 → 1098 (638 × 798 px) ; le bas du cadre tombe
+       sur la coupe nette du buste (y ≈ 1097), qui est ainsi fondue.
+       Si la photo est remplacée par une image cadrée autrement, recalculer :
+       width = 1080 / largeur zone ; left = -x / largeur zone ; top = -y / hauteur zone. */
+    .hero-portrait img {
+      position: absolute;
+      top: -37.59%;
+      left: -34.64%;
+      width: 169.28%;
+      max-width: none;
+      height: auto;
     }
 
     /* Ordinateur : texte à gauche, portrait à droite */

@@ -28,7 +28,9 @@ Le commentaire HTML qui signale cette zone contient aussi le marqueur : il est i
 
 ## Portrait
 
-La photo est le fichier `sarah.png` à la racine du dépôt : une version détourée sur fond transparent, déjà cadrée sur le visage et les épaules. Elle est posée directement sur le fond de la page, sans cadre ni ombre ; ses bords bas et latéraux sont légèrement fondus pour éviter une coupe nette. Ces réglages se trouvent dans le bloc « Portrait » de la balise `<style>`. Pour changer de photo, remplacer le fichier en gardant le même nom, ou modifier l’attribut `src` dans `index.html`.
+La photo est le fichier `sarah.png` à la racine du dépôt : une version détourée sur fond transparent. Elle est posée directement sur le fond de la page, sans cadre ni ombre, recadrée en CSS sur le visage et les épaules ; ses bords bas et latéraux sont légèrement fondus pour éviter une coupe nette. Ces réglages se trouvent dans le bloc « Portrait » de la balise `<style>`.
+
+Attention : le recadrage est calculé pour la position du buste dans le fichier `sarah.png` actuel. Si la photo est remplacée par une image cadrée autrement (même sous le même nom), le cadrage doit être recalculé ; la formule est indiquée en commentaire au-dessus de `.hero-portrait img`.
 
 ## Modifier les textes
 
