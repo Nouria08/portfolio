@@ -73,3 +73,4 @@ Chaque modification poussée ensuite sur `main` est republiée automatiquement.
 ## Aperçu en local
 
 Ouvrir `index.html` dans un navigateur, sans installation.
+
