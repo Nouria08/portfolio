@@ -11,7 +11,7 @@ Version anglaise directe : https://nouria08.github.io/portfolio/?lang=en
 | Fichier | Rôle |
 | --- | --- |
 | `index.html` | Le site complet : HTML, CSS et JavaScript intégrés. |
-| `sarah.png` | Portrait détouré (fond transparent) affiché dans l’en-tête du site. |
+| `sarah.webp` | Portrait détouré (fond transparent) affiché dans l’en-tête du site. |
 | `og-image.png` | Image d’aperçu de partage (WhatsApp, LinkedIn…), 1200 × 630 px. |
 | `.nojekyll` | Fichier vide qui demande à GitHub Pages de servir les fichiers tels quels, sans traitement Jekyll. |
 | `README.md` | Ce mode d’emploi. |
@@ -28,9 +28,9 @@ Le commentaire HTML qui signale cette zone contient aussi le marqueur : il est i
 
 ## Portrait
 
-La photo est le fichier `sarah.png` à la racine du dépôt : une version détourée sur fond transparent. Elle est posée directement sur le fond de la page, sans cadre ni ombre, recadrée en CSS sur le visage et les épaules ; ses bords bas et latéraux sont légèrement fondus pour éviter une coupe nette. Ces réglages se trouvent dans le bloc « Portrait » de la balise `<style>`.
+La photo est le fichier `sarah.webp` à la racine du dépôt : une version détourée sur fond transparent. Elle est posée directement sur le fond de la page, sans cadre ni ombre, recadrée en CSS sur le visage et les épaules ; ses bords bas et latéraux sont légèrement fondus pour éviter une coupe nette. Ces réglages se trouvent dans le bloc « Portrait » de la balise `<style>`.
 
-Attention : le recadrage est calculé pour la position du buste dans le fichier `sarah.png` actuel. Si la photo est remplacée par une image cadrée autrement (même sous le même nom), le cadrage doit être recalculé ; la formule est indiquée en commentaire au-dessus de `.hero-portrait img`.
+Attention : le recadrage est calculé pour la position du buste dans le fichier `sarah.webp` actuel. Si la photo est remplacée par une image cadrée autrement (même sous le même nom), le cadrage doit être recalculé ; la formule est indiquée en commentaire au-dessus de `.hero-portrait img`.
 
 ## Modifier les textes
 

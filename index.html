@@ -277,15 +277,15 @@
       overflow: hidden;
       -webkit-mask-image:
         linear-gradient(to bottom, #000 76%, transparent 100%),
-        linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+        linear-gradient(to right, transparent 0, #000 20%, #000 72%, transparent 100%);
       -webkit-mask-composite: source-in;
       mask-image:
         linear-gradient(to bottom, #000 76%, transparent 100%),
-        linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+        linear-gradient(to right, transparent 0, #000 20%, #000 72%, transparent 100%);
       mask-composite: intersect;
     }
 
-    /* Cadrage serré visage + épaules dans sarah.png (1080 × 1350 px, fond transparent).
+    /* Cadrage serré visage + épaules dans sarah.webp (1080 × 1350 px, fond transparent).
        Zone affichée : x 221 → 859, y 300 → 1098 (638 × 798 px) ; le bas du cadre tombe
        sur la coupe nette du buste (y ≈ 1097), qui est ainsi fondue.
        Si la photo est remplacée par une image cadrée autrement, recalculer :
@@ -409,46 +409,34 @@
 
     /* ---------- Marques ---------- */
 
-    /* Grille : le fond bleu nuit apparaît dans les interstices de 1 px = filets fins */
-    .brands {
+    /* Marques classées par secteur : un filet bleu nuit au-dessus de chaque colonne, pas de grille */
+    .sectors {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--navy);
-      border-block: 1px solid var(--navy);
+      gap: 2.5rem 1.5rem;
     }
-
-    .brand-cell {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem;
-      min-height: clamp(6rem, 15vw, 8.5rem);
-      padding: 1.25rem .75rem;
-      background: var(--bg);
-      text-align: center;
-    }
-    .brand-cell-wide { grid-column: span 2; }
+    .sector { padding-top: 1.25rem; border-top: 1px solid var(--navy); }
+    .sector .label { margin-bottom: .875rem; }
 
     .brand-name {
+      display: block;
       font-family: var(--serif);
       font-weight: 500;
-      font-size: clamp(1.25rem, 5.5vw, 2.25rem);
-      line-height: 1.15;
+      font-size: clamp(1.5rem, 6vw, 2rem);
+      line-height: 1.25;
     }
     .brand-name .nowrap { white-space: nowrap; }
 
     .brand-note {
       max-width: 34ch;
-      font-size: .875rem;
+      margin-top: .5rem;
+      font-size: .8125rem;
       line-height: 1.5;
       color: var(--ink-soft);
     }
 
     @media (min-width: 900px) {
-      .brands { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .brand-name { font-size: clamp(1.5rem, 2.6vw, 2.25rem); }
+      .sectors { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
     }
 
     /* ---------- Méthode ---------- */
@@ -550,13 +538,17 @@
       border-top: 1px solid var(--ink);
     }
 
-    .case-title {
+    .case > .label { margin-bottom: .5rem; }
+
+    /* Le grand chiffre du cas reprend le style des chiffres clés */
+    .case-figure {
       font-family: var(--serif);
       font-weight: 500;
-      font-size: clamp(1.875rem, 4vw, 2.375rem);
-      line-height: 1.15;
+      font-size: clamp(3.25rem, 7vw, 4.5rem);
+      line-height: 1;
+      color: var(--navy);
     }
-    .case-title span { color: var(--ink-faint); }
+    .case-caption { margin-top: .5rem; color: var(--ink-soft); }
 
     .case-body { margin-top: 1.75rem; }
 
@@ -570,13 +562,7 @@
       margin-top: .375rem;
       font-size: 1rem;
       line-height: 1.6;
-      color: var(--ink-faint);
-    }
-
-    .todo {
-      font-weight: 500;
-      letter-spacing: .04em;
-      color: var(--navy);
+      color: var(--ink-soft);
     }
 
     @media (min-width: 820px) {
@@ -735,7 +721,7 @@
           </div>
           <!-- PORTRAIT : le cadrage se règle dans le bloc CSS « Portrait » (.hero-portrait img). -->
           <figure class="hero-portrait">
-            <img src="sarah.png" alt="Sarah Nouria" width="1080" height="1350" decoding="async" fetchpriority="high">
+            <img src="sarah.webp" alt="Sarah Nouria" width="1080" height="1350" decoding="async" fetchpriority="high">
           </figure>
         </div>
       </div>
@@ -778,18 +764,28 @@
           <span lang="en">Brands I’ve worked with</span>
         </h2>
 
-        <ul class="brands reveal">
-          <li class="brand-cell"><span class="brand-name">Orange</span></li>
-          <li class="brand-cell"><span class="brand-name">Honda</span></li>
-          <li class="brand-cell brand-cell-wide">
-            <span class="brand-name">Ferrari</span>
-            <p class="brand-note" lang="fr">Opérations de notoriété premium&nbsp;: événementiel et soirées privées clients.</p>
-            <p class="brand-note" lang="en">Premium brand awareness: events and private client evenings.</p>
+        <ul class="sectors reveal">
+          <li class="sector">
+            <p class="label"><span lang="fr">Télécom</span><span lang="en">Telecom</span></p>
+            <p class="brand-name">Orange</p>
           </li>
-          <li class="brand-cell"><span class="brand-name">EDF</span></li>
-          <li class="brand-cell"><span class="brand-name">L’Oréal</span></li>
-          <li class="brand-cell"><span class="brand-name">La <span class="nowrap">Roche-Posay</span></span></li>
-          <li class="brand-cell"><span class="brand-name">CeraVe</span></li>
+          <li class="sector">
+            <p class="label"><span lang="fr">Automobile</span><span lang="en">Automotive</span></p>
+            <p class="brand-name">Honda</p>
+            <p class="brand-name">Ferrari</p>
+            <p class="brand-note" lang="fr">Notoriété premium&nbsp;: événementiel et soirées privées clients.</p>
+            <p class="brand-note" lang="en">Premium awareness: events and private client evenings.</p>
+          </li>
+          <li class="sector">
+            <p class="label"><span lang="fr">Énergie</span><span lang="en">Energy</span></p>
+            <p class="brand-name">EDF</p>
+          </li>
+          <li class="sector">
+            <p class="label"><span lang="fr">Beauté</span><span lang="en">Beauty</span></p>
+            <p class="brand-name">L’Oréal</p>
+            <p class="brand-name">La <span class="nowrap">Roche-Posay</span></p>
+            <p class="brand-name">CeraVe</p>
+          </li>
         </ul>
       </div>
     </section>
@@ -855,7 +851,7 @@
       </div>
     </section>
 
-    <!-- 5. Études de cas (textes provisoires : remplacer chaque [À COMPLÉTER] en FR et en EN) -->
+    <!-- 5. Études de cas : un cas par grand chiffre, structuré comme la signature (Data, Preuve, Décision) -->
     <section class="section" id="cas" aria-labelledby="cas-titre">
       <div class="wrap">
         <h2 class="section-title reveal" id="cas-titre">
@@ -865,47 +861,49 @@
 
         <div class="cases">
           <article class="case reveal">
-            <h3 class="case-title">
-              <span lang="fr">Cas 1&nbsp;:</span><span lang="en">Case 1:</span> Honda Maroc
-            </h3>
+            <p class="label"><span lang="fr">Opérateur télécom · 9 lignes de produits</span><span lang="en">Telecom operator · 9 product lines</span></p>
+            <p class="case-figure"><span lang="fr">+1&nbsp;M€</span><span lang="en">+€1M</span></p>
+            <p class="case-caption" lang="fr">de budget média annuel, réparti sur 8 plateformes.</p>
+            <p class="case-caption" lang="en">annual media budget across 8 platforms.</p>
             <dl class="case-body">
               <div class="case-part">
-                <dt class="label"><span lang="fr">Contexte</span><span lang="en">Context</span></dt>
-                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Situation de départ, objectif, contraintes.</dd>
-                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> Starting point, objective, constraints.</dd>
+                <dt class="label">Data</dt>
+                <dd lang="fr">Chaque plateforme comptait ses propres «&nbsp;conversions&nbsp;»&nbsp;: des chiffres impossibles à comparer entre eux, et pas toujours des ventes.</dd>
+                <dd lang="en">Each platform counted its own “conversions”: figures that could not be compared, and were not always sales.</dd>
               </div>
               <div class="case-part">
-                <dt class="label">Action</dt>
-                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Ce qui a été audité, décidé et mis en place.</dd>
-                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> What was audited, decided and put in place.</dd>
+                <dt class="label"><span lang="fr">Preuve</span><span lang="en">Proof</span></dt>
+                <dd lang="fr">Comparé parcours par parcours, le levier le moins cher n’était jamais le même&nbsp;: il changeait selon la cible, et d’un mois à l’autre.</dd>
+                <dd lang="en">Compared journey by journey, the cheapest channel was never the same: it shifted with the audience, and from one month to the next.</dd>
               </div>
               <div class="case-part">
-                <dt class="label"><span lang="fr">Résultat</span><span lang="en">Result</span></dt>
-                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Résultats chiffrés et source des données.</dd>
-                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> Measured results and data source.</dd>
+                <dt class="label"><span lang="fr">Décision</span><span lang="en">Decision</span></dt>
+                <dd lang="fr">Budget réarbitré chaque mois, par parcours et par plateforme. Tracking corrigé là où il comptait de faux succès. Inventaires sans valeur coupés.</dd>
+                <dd lang="en">Budget reallocated every month, by journey and by platform. Tracking fixed wherever it counted false wins. Low-value inventory cut.</dd>
               </div>
             </dl>
           </article>
 
           <article class="case reveal">
-            <h3 class="case-title">
-              <span lang="fr">Cas 2&nbsp;:</span><span lang="en">Case 2:</span> Orange Maroc
-            </h3>
+            <p class="label"><span lang="fr">Concessionnaire automobile premium</span><span lang="en">Premium car dealership</span></p>
+            <p class="case-figure"><span lang="fr">+60&nbsp;%</span><span lang="en">+60%</span></p>
+            <p class="case-caption" lang="fr">de visites en showroom, avec un budget réduit d’environ 20&nbsp;%.</p>
+            <p class="case-caption" lang="en">more showroom visits, on a budget about 20% lower.</p>
             <dl class="case-body">
               <div class="case-part">
-                <dt class="label"><span lang="fr">Contexte</span><span lang="en">Context</span></dt>
-                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Situation de départ, objectif, contraintes.</dd>
-                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> Starting point, objective, constraints.</dd>
+                <dt class="label">Data</dt>
+                <dd lang="fr">La campagne précédente avait absorbé un gros budget pour une poignée de ventes.</dd>
+                <dd lang="en">The previous campaign had absorbed a large budget for a handful of sales.</dd>
               </div>
               <div class="case-part">
-                <dt class="label">Action</dt>
-                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Ce qui a été audité, décidé et mis en place.</dd>
-                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> What was audited, decided and put in place.</dd>
+                <dt class="label"><span lang="fr">Preuve</span><span lang="en">Proof</span></dt>
+                <dd lang="fr">Dépenser plus n’aurait rien changé&nbsp;: le problème était dans les indicateurs suivis et dans le message.</dd>
+                <dd lang="en">Spending more would not have helped: the problem lay in the indicators being tracked and in the message.</dd>
               </div>
               <div class="case-part">
-                <dt class="label"><span lang="fr">Résultat</span><span lang="en">Result</span></dt>
-                <dd lang="fr"><span class="todo">[À COMPLÉTER]</span> Résultats chiffrés et source des données.</dd>
-                <dd lang="en"><span class="todo">[À COMPLÉTER]</span> Measured results and data source.</dd>
+                <dt class="label"><span lang="fr">Décision</span><span lang="en">Decision</span></dt>
+                <dd lang="fr">Nouvelle agence, indicateurs redéfinis, campagnes de génération de leads, message retravaillé. Ventes&nbsp;: +32&nbsp;% par rapport à la campagne précédente.</dd>
+                <dd lang="en">New agency, redefined KPIs, lead-generation campaigns, reworked message. Sales: +32% versus the previous campaign.</dd>
               </div>
             </dl>
           </article>
